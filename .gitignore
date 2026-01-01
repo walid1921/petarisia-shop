@@ -1,5 +1,11 @@
 /.idea
 /vendor/
+/node_modules/
+/var/cache/
+/var/log/
+/public/bundles/
+/public/theme/
+/public/media/cache/
 
 ###> shopware/core ###
 .env.local
