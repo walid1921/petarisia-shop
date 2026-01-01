@@ -1,0 +1,88 @@
+
+.offcanvas-cart {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.offcanvas-cart-empty-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.offcanvas-cart-suggestions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+
+
+.offcanvas-cart-suggestion {
+  position: relative;
+  height: 180px;
+}
+
+.offcanvas-cart-suggestion-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+}
+
+.offcanvas-cart-suggestion-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.offcanvas-cart-suggestion-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Black fade overlay */
+.offcanvas-cart-suggestion-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+                  to top,
+                  rgba(0, 0, 0, 0.65) 0%,
+                  rgba(0, 0, 0, 0.35) 40%,
+                  rgba(0, 0, 0, 0) 75%
+  );
+  z-index: 1;
+}
+
+/* Content inside image */
+.offcanvas-cart-suggestion-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.offcanvas-cart-suggestion-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: white;
+}
+
+.offcanvas-cart-suggestion-text {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}

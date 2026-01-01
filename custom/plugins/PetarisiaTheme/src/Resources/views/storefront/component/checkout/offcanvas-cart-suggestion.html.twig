@@ -1,0 +1,28 @@
+{% block component_offcanvas_cart_suggestion %}
+
+    <div class="offcanvas-cart-suggestion">
+
+        {% if image %}
+            <a href="{{ link }}" class="offcanvas-cart-suggestion-image">
+
+                <img
+                        src="{{ image|sw_encode_url }}"
+                        alt="{{ title|striptags }}"
+                        loading="lazy"
+                >
+
+                <div class="offcanvas-cart-suggestion-overlay">
+                    <h5 class="offcanvas-cart-suggestion-title">
+                        {{ title|trans|sw_sanitize }}
+                    </h5>
+
+                    <p class="offcanvas-cart-suggestion-text">
+                        {{ description|trans|sw_sanitize }}
+                    </p>
+                </div>
+
+            </a>
+        {% endif %}
+
+    </div>
+{% endblock %}

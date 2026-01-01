@@ -1,0 +1,188 @@
+.alert {
+  display: flex !important;
+  align-items: stretch !important;
+
+  padding: 0 !important;
+  margin-bottom: var(--bs-alert-margin-bottom) !important;
+
+  background-color: var(--bs-alert-bg) !important;
+  border: 1px solid var(--bs-alert-border-color) !important;
+  border-radius: var(--bs-alert-border-radius) !important;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .04) !important;
+
+  --bs-alert-color: inherit !important;
+}
+
+.alert > .icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 44px !important;
+  min-width: 44px !important;
+
+  margin-inline: .5rem !important;
+}
+
+.alert > .icon svg {
+  width: 22px !important;
+  height: 22px !important;
+  display: block !important;
+  overflow: visible !important;
+  stroke-width: .2 !important;
+}
+
+/* =========================
+   CONTENT
+   ========================= */
+.alert-content-container {
+  border-left: 1px solid var(--bs-alert-border-color) !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  padding: 0.5rem 1rem !important;
+  margin: 0 !important;
+}
+
+.alert-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: .3rem !important;
+}
+
+.alert-content span:first-child {
+  font-weight: 400 !important;
+  color: var(--bs-alert-color) !important;
+}
+
+/* sub text always neutral */
+.subContent {
+  color: $sw-color-brand-secondary !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+}
+
+/* =========================
+   DISMISS BUTTON
+   ========================= */
+.alert-dismissible {
+  padding-right: 1.5rem !important;
+}
+
+.alert-dismissible .btn-close {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  z-index: 2 !important;
+  padding: 0.625rem 0.5rem !important;
+}
+
+/* =========================
+   ALERT TYPES (BOOTSTRAP VARS)
+   ========================= */
+.alert-primary {
+  --bs-alert-color: var(--bs-primary-text-emphasis);
+  --bs-alert-bg: var(--bs-primary-bg-subtle);
+  --bs-alert-border-color: var(--bs-primary-border-subtle);
+  --bs-alert-link-color: var(--bs-primary-text-emphasis);
+
+  svg {
+    color: var(--bs-primary);
+    fill: var(--bs-primary);
+  }
+}
+
+.alert-secondary {
+  --bs-alert-color: var(--bs-secondary-text-emphasis);
+  --bs-alert-bg: var(--bs-secondary-bg-subtle);
+  --bs-alert-border-color: var(--bs-secondary-border-subtle);
+  --bs-alert-link-color: var(--bs-secondary-text-emphasis);
+
+  svg {
+    color: var(--bs-secondary);
+    fill: var(--bs-secondary);
+  }
+}
+
+.alert-success {
+  --bs-alert-color: var(--bs-success-text-emphasis);
+  --bs-alert-bg: var(--bs-success-bg-subtle);
+  --bs-alert-border-color: var(--bs-success-border-subtle);
+  --bs-alert-link-color: var(--bs-success-text-emphasis);
+  svg {
+    color: var(--bs-success);
+    fill: var(--bs-success);
+  }
+}
+
+.alert-info {
+  --bs-alert-bg: #{#ebebeb} !important;
+  --bs-alert-border-color: #{$sw-border-color} !important;
+  --bs-alert-color: #{$sw-color-brand-primary} !important;
+  svg {
+    color: #{$sw-color-brand-primary} !important;
+    fill: #{$sw-color-brand-primary} !important;
+  }
+}
+
+.alert-warning {
+  --bs-alert-color: var(--bs-warning-text-emphasis);
+  --bs-alert-bg: var(--bs-warning-bg-subtle);
+  --bs-alert-border-color: var(--bs-warning-border-subtle);
+  --bs-alert-link-color: var(--bs-warning-text-emphasis);
+  svg {
+    color: var(--bs-warning);
+    fill: var(--bs-warning);
+  }
+}
+
+.alert-danger {
+  --bs-alert-color: var(--bs-danger-text-emphasis);
+  --bs-alert-bg: var(--bs-danger-bg-subtle);
+  --bs-alert-border-color: var(--bs-danger-border-subtle);
+  --bs-alert-link-color: var(--bs-danger-text-emphasis);
+  svg {
+    color: var(--bs-danger);
+    fill: var(--bs-danger);
+  }
+}
+
+.alert-light {
+  --bs-alert-color: var(--bs-light-text-emphasis);
+  --bs-alert-bg: var(--bs-light-bg-subtle);
+  --bs-alert-border-color: var(--bs-light-border-subtle);
+  --bs-alert-link-color: var(--bs-light-text-emphasis);
+  svg {
+    color: var(--bs-light);
+    fill: var(--bs-light);
+  }
+}
+
+.alert-dark {
+  --bs-alert-color: var(--bs-dark-text-emphasis);
+  --bs-alert-bg: var(--bs-dark-bg-subtle);
+  --bs-alert-border-color: var(--bs-dark-border-subtle);
+  --bs-alert-link-color: var(--bs-dark-text-emphasis);
+  svg {
+    color: var(--bs-dark);
+    fill: var(--bs-dark);
+  }
+}
+
+/* =========================
+   ICON COLOR (uses alert vars)
+   ========================= */
+.alert-primary,
+.alert-secondary,
+.alert-success,
+.alert-info,
+.alert-warning,
+.alert-danger,
+.alert-light,
+.alert-dark {
+  .icon svg {
+    stroke: var(--bs-alert-color) !important;
+  }
+}

@@ -1,0 +1,12 @@
+{% sw_extends '@Storefront/storefront/page/content/index.html.twig' %}
+
+
+{% block page_content %}
+{{ parent() }}
+
+    <section>
+        {% sw_include("@PetarisiaTheme/storefront/component/joinToday.html.twig")  %}
+        {% sw_icon 'instagram' %}
+    </section>
+
+{% endblock %}

@@ -1,0 +1,341 @@
+$sw-color-brand-primary: #1C1C1C;
+$sw-color-brand-secondary: #ababab;
+$sw-border-color: #bbb;
+$sw-background-color: #F5F5F5;
+$sw-font-family-base: 'Montserrat', sans-serif;
+$sw-font-family-headline: 'Montserrat', sans-serif;
+$sw-text-color: #2b3136;
+$sw-headline-color: #2b3136;
+$sw-color-price: #2b3136;
+$sw-color-buy-button: #1C1C1C;
+$sw-color-buy-button-text: #fff;
+
+$sw-color-success: #1B8655;
+$sw-color-info: #212529;
+$sw-color-warning: #FFC008;
+$sw-color-danger: #DB3545;
+
+//$sw-border-color:#0042a0;
+
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg:  0;
+$border-radius-xl: 0;
+$border-radius-xxl: 0;
+$border-radius-pill: 0;
+$border-radius-2xl:  $border-radius-xxl !default;
+
+$form-check-input-focus-border: transparent;
+$form-check-input-focus-box-shadow: none;
+
+$focus-ring-width: 1px;
+
+  //.form-select {
+//  display: block;
+//  width: 100%;
+//  padding: 0.438rem 1.6875rem 0.438rem 0.5625rem;
+//  font-size: 1rem;
+//  font-weight: 400;
+//  line-height: 1.5;
+//  color: #f43e27;
+//  appearance: none;
+//  background-color: var(--bs-body-bg);
+//  background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
+//  background-repeat: no-repeat;
+//  background-position: right 0.5625rem center;
+//  background-size: 16px 12px;
+//  border: var(--bs-border-width) solid #fd04a6;
+//  border-radius: var(--bs-border-radius);
+//  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+//}
+
+
+//Force override (not recommended, but works)
+//.container,
+//.cms-section .boxed {
+//  max-width: 1700px !important;
+//}
+//
+//This works, but:
+//Makes debugging harder
+//Should be avoided unless absolutely necessary
+
+$container-max-widths: (
+        sm: 100%,
+        md: 100%,
+        lg: 100%,
+        xl: 100%,
+        xxl: 100%
+);
+
+
+input, button, select, optgroup, textarea {
+  &:hover {
+    border-color: $sw-color-brand-primary;
+  }
+
+  &::placeholder {
+    color: $sw-color-brand-secondary !important;
+  }
+}
+
+input[type="checkbox"] {
+  border-radius: $border-radius !important;
+}
+
+
+.header-search-input {
+
+  &:focus {
+    border-right: 0 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-suggest-container {
+    left: 62% !important;
+  }
+}
+
+
+
+.header-search-btn {
+  border-left: 1px solid $sw-border-color !important;
+
+  &:focus {
+    border-left: 1px solid $sw-border-color !important;
+  }
+}
+
+//! Product card
+.cms-element-product-listing .cms-listing-row {
+  --bs-gutter-x: 10px !important;
+  --bs-gutter-y: 30px;
+  margin-bottom: 1.5rem;
+}
+
+//.product-image-wrapper {
+//  display: flex !important;
+//  align-items: center !important;
+//  justify-content: center !important;
+//  height: 100% !important;
+//  max-height: 400px !important;
+//}
+
+.product-badges  {
+  top: 0 !important;
+
+  .badge {
+    background-color: $sw-color-brand-primary;
+    font-size: .75rem !important;
+    margin: 0 !important;
+    line-height: 0;
+    border-radius: $border-radius;
+    padding: 0 .5rem;
+  }
+}
+
+
+
+//$form-check-input-focus-border: trasparent !important;
+//.header-search-input {
+//  border-right: 0;
+//  &focus: {
+//
+//  }
+//}
+
+
+.header-custom-icon svg {
+  width: 24px;
+  height: 24px;
+  color: $sw-text-color;
+}
+
+
+.cta-shop {
+  position: relative;
+  isolation: isolate;
+  min-height: 65vh;
+  display: grid;
+  place-items: center;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    //background-image: url("#{$app-css-relative-asset-path}/logo.png");
+    background-size: cover;
+    background-position: center;
+    filter: saturate(.9);
+    z-index: -2;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+                      to bottom,
+                      rgba(0, 0, 0, 0.10),
+                      rgba(0, 0, 0, 0.90)
+      );
+      z-index: -1;
+    }
+  }
+
+  &__inner {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding-block: clamp(3rem, 7vh, 6rem);
+  }
+
+  &__panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 720px;
+    width: min(92%, 760px);
+    background: var(--bs-body-bg);
+    color: var(--bs-black);
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 4vw, 3rem);
+    text-align: center;
+  }
+
+  &__subtitle {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1.25rem;
+    color: var(--bs-gray);
+    font-size: clamp(.95rem, 1.3vw, 1.125rem);
+    line-height: 1.6;
+  }
+}
+
+
+
+
+
+
+//[class^="icon-"], [class*=" icon-"] {
+//
+//  top: 0 !important;
+//}
+
+.icon {
+  display: inline-flex;
+  align-self: center;
+  font-size: inherit;
+  overflow: visible;
+  color: $sw-color-brand-primary !important;
+  //height: 100% !important;
+}
+
+
+
+
+.header-cart-total {
+  color: $sw-text-color;
+  font-size: 15px !important;
+}
+
+
+.badge {
+  border: 1px solid white !important;
+  box-sizing: content-box;
+  height: 20px;
+  line-height: 20px;
+  margin: 0 5px;
+  min-width: 10px;
+  font-size: 10px !important;
+  background-color: rgba(0, 0, 0, 0.80) !important;
+}
+
+.badge.checkout-cart {
+  position: absolute;
+  right: -.3rem !important;
+  top: -.5rem !important;
+}
+
+
+
+.badge.header-wishlist-badge {
+  position: absolute;
+  right: -.3rem !important;
+  top: 0 !important;
+}
+
+
+.offcanvas .offcanvas-close {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 0;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  background-color: white;
+  color: $sw-color-brand-secondary;
+  border: none;
+
+  svg {
+    width: 12px;
+    height: 12px;
+    color: $sw-color-brand-secondary;
+  }
+
+  .continue-shopping {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+  }
+
+  &:hover {
+    background-color: $sw-color-brand-primary;
+    color: white !important;
+
+    svg {
+      color: white;
+    }
+  }
+}
+
+
+//! Primary Button
+.button-primary {
+  color: #ffffff !important;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+
+  border: 2px solid transparent; // transparent needed for border-image
+  border-image: linear-gradient(to top left, #111111, #7a7a7a) 1; // opposite direction of background
+  background: linear-gradient(to bottom right, #111111, #7a7a7a);
+  transition: background 0.2s ease-in-out;
+  cursor: pointer;
+
+  padding: 6px 10px;
+
+  &.with-text {
+    padding: 6px 20px;
+  }
+
+  &:hover {
+    opacity: 90%;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &--fullWidth {
+    width: 100%;
+  }
+
+  &--halfWidth {
+    width: 50%;
+  }
+
+  &.disabled-btn {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
